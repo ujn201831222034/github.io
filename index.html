@@ -1,56 +1,76 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8">
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
         body {
+            margin: 0;
+            height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
-            margin: 0;
-            background-color: #ffffff;
-            flex-direction: column;
+            background-image: url('background.jpeg');
+            background-size: cover;
+            font-family: 'Great Vibes', cursive;
         }
 
         .heart {
             position: relative;
             width: 100px;
             height: 90px;
+            animation: beat 1s infinite;
         }
 
         .heart::before, .heart::after {
-            content: "";
             position: absolute;
-            top: 0;
+            content: "";
+            top: 40px;
             width: 52px;
             height: 80px;
             border-radius: 50px 50px 0 0;
             background: red;
         }
 
-        .heart::before{
+        .heart::before {
             left: 50px;
             transform: rotate(-45deg);
             transform-origin: 0 100%;
         }
 
-        .heart::after{
+        .heart::after {
             left: 0;
             transform: rotate(45deg);
             transform-origin: 100% 100%;
         }
 
-        p {
-            font-size: 2em;
+        h1 {
+            color: white;
+            font-size: 3em;
+            text-align: center;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
             margin-top: 20px;
+        }
+
+        p {
+            color: white;
+            font-size: 2em;
+            text-align: center;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            margin-top: 10px;
+        }
+
+        @keyframes beat {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
         }
     </style>
 </head>
 <body>
-
-<div class="heart"></div>
-<p>马婉毓</p>
-
+    <div>
+        <div class="heart"></div>
+        <h1>I Love You!</h1>
+        <p>Wanyu Ma</p>
+    </div>
 </body>
 </html>
